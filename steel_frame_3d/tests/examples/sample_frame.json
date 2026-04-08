@@ -1,0 +1,148 @@
+{
+  "version": "1.0",
+  "units": {
+    "length": "m",
+    "force": "kN",
+    "stress": "kPa",
+    "mass": "kg"
+  },
+  "materials": [
+    {
+      "id": 1,
+      "name": "Steel",
+      "E": 210000000.0,
+      "nu": 0.3,
+      "density": 7850.0
+    }
+  ],
+  "sections": [
+    {
+      "id": 1,
+      "name": "H200x100",
+      "A": 0.0025,
+      "Iy": 1.5e-05,
+      "Iz": 3e-05,
+      "J": 2e-06
+    }
+  ],
+  "nodes": [
+    {
+      "id": 1,
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    {
+      "id": 2,
+      "x": 0.0,
+      "y": 0.0,
+      "z": 4.0
+    },
+    {
+      "id": 3,
+      "x": 5.0,
+      "y": 0.0,
+      "z": 4.0
+    },
+    {
+      "id": 4,
+      "x": 5.0,
+      "y": 0.0,
+      "z": 0.0
+    }
+  ],
+  "elements": [
+    {
+      "id": 1,
+      "start_node_id": 1,
+      "end_node_id": 2,
+      "material_id": 1,
+      "section_id": 1,
+      "orientation_vector": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 2,
+      "start_node_id": 2,
+      "end_node_id": 3,
+      "material_id": 1,
+      "section_id": 1,
+      "orientation_vector": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": 3,
+      "start_node_id": 3,
+      "end_node_id": 4,
+      "material_id": 1,
+      "section_id": 1,
+      "orientation_vector": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ],
+  "boundary_conditions": [
+    {
+      "node_id": 1,
+      "ux": true,
+      "uy": true,
+      "uz": true,
+      "rx": true,
+      "ry": true,
+      "rz": true
+    },
+    {
+      "node_id": 4,
+      "ux": true,
+      "uy": true,
+      "uz": true,
+      "rx": true,
+      "ry": true,
+      "rz": true
+    }
+  ],
+  "load_cases": [
+    {
+      "id": 1,
+      "name": "Dead Load",
+      "loads": [
+        {
+          "id": 1,
+          "type": "nodal_force",
+          "node_id": 2,
+          "fx": 0.0,
+          "fy": 0.0,
+          "fz": -10.0
+        },
+        {
+          "id": 2,
+          "type": "nodal_force",
+          "node_id": 3,
+          "fx": 0.0,
+          "fy": 0.0,
+          "fz": -10.0
+        }
+      ]
+    }
+  ],
+  "combinations": [
+    {
+      "id": 1,
+      "name": "Ultimate",
+      "factors": [
+        {
+          "load_case_id": 1,
+          "factor": 1.35
+        }
+      ]
+    }
+  ]
+}
