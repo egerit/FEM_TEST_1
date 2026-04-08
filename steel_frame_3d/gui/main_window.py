@@ -5,12 +5,12 @@ Main application window for SteelFrame3D.
 import sys
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, 
-    QMenuBar, QMenu, QAction, QToolBar, QStatusBar,
+    QMenuBar, QMenu, QToolBar, QStatusBar,
     QSplitter, QTreeWidget, QTreeWidgetItem, QPushButton,
     QLabel, QMessageBox, QFileDialog, QApplication
 )
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QIcon
+from PyQt6.QtGui import QIcon, QAction
 
 from vtkmodules.qt.QVTKRenderWindowInteractor import QVTKRenderWindowInteractor
 from vtkmodules.all import (
