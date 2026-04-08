@@ -19,7 +19,7 @@ from vtkmodules.all import (
     vtkSphereSource, vtkArrowSource, vtkTransform
 )
 
-from data.models import Model, Node, Element, NodalForce, LoadCase, LoadCombination
+from data.models import Model, Node, Element, Material, Section, NodalForce, LoadCase, LoadCombination
 from core.analyzer import FrameAnalyzer
 
 
